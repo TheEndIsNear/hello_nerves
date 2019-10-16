@@ -2,7 +2,12 @@ defmodule HelloNerves do
   alias Circuits.GPIO
   require Logger
 
-  @output_pin 2
+  @output_pin 4
+
+  def start(_type, _args) do
+    spawn(fn -> init() end)
+    {:ok, self()}
+  end
 
   def init() do
     {:ok, gpio} = GPIO.open(@output_pin, :output)

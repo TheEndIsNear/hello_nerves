@@ -30,7 +30,7 @@ defmodule HelloNerves.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      mod: {HelloNerves.Application, []},
+      mod: {HelloNerves, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -51,6 +51,7 @@ defmodule HelloNerves.MixProject do
 
       # Dependencies for specific targets
       {:nerves_system_rpi, "~> 1.8", runtime: false, targets: :rpi},
+      {:nerves_system_rpi4, "~> 1.9", runtime: false, targets: :rpi4}
     ]
   end
 
